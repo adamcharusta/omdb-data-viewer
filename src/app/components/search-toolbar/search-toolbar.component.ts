@@ -10,7 +10,7 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class SearchToolbarComponent {
   @Output() search = new EventEmitter<SearchParametersType>();
-  constructor(private translocoService: TranslocoService) {}
+
   @Input() searchForm!: FormGroup<SearchFormType>;
 
   public typeOptions = [
@@ -39,6 +39,8 @@ export class SearchToolbarComponent {
       value: 'game',
     },
   ];
+
+  constructor(private translocoService: TranslocoService) {}
 
   onChange() {
     this.search.emit(this.searchForm.getRawValue());

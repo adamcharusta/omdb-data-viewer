@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-card',
   template: `
-    <mat-card [style.width.px]="width" class="card">
+    <mat-card [style.width.px]="width" class="card" [class]="class">
       <mat-card-header>
         <mat-card-title *ngIf="title">{{ title }}</mat-card-title>
         <mat-card-subtitle *ngIf="subtitle">{{ subtitle }}</mat-card-subtitle>
@@ -28,4 +28,5 @@ export class CardComponent {
   @Input() title?: string;
   @Input() subtitle?: string;
   @Input() width?: number;
+  @Input() class = '';
 }

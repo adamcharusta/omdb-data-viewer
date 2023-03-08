@@ -1,22 +1,27 @@
 <main class="w-100 h-100" *transloco="let t">
   <app-search-toolbar [searchForm]="searchForm"></app-search-toolbar>
+
+  <div class="container">
+    <app-card class="mt-2">
+      <div *ngIf="omdbData$ | async as omdbData" content>
+        <p
+          *ngFor="let movie of omdbData?.Search"
+          (click)="getMovieData(movie.imdbID)">
+          {{ movie.Title }}
+        </p>
+
+        <mat-paginator
+          footer
+          class="w-100 bg-transparent"
+          (page)="handleChangePage($event)"
+          *ngIf="omdbData.totalResults"
+          [length]="omdbData.totalResults | stringToNumber"
+          [showFirstLastButtons]="true"
+          [hidePageSize]="true"
+          [pageSize]="10"
+          [pageIndex]="searchForm.controls.page.value">
+        </mat-paginator>
+      </div>
+    </app-card>
+  </div>
 </main>
-
-<div *ngIf="omdbData$ | async as omdbData">
-  <p
-    *ngFor="let movie of omdbData?.Search"
-    (click)="getMovieData(movie.imdbID)">
-    {{ movie.Title }}
-  </p>
-
-  <mat-paginator
-    (page)="handleChangePage($event)"
-    class="demo-paginator"
-    *ngIf="omdbData.totalResults"
-    [length]="omdbData.totalResults | stringToNumber"
-    [showFirstLastButtons]="true"
-    [hidePageSize]="true"
-    [pageIndex]="searchForm.controls.page.value"
-    aria-label="Select page">
-  </mat-paginator>
-</div>

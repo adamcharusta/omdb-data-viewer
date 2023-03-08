@@ -1,5 +1,12 @@
 {
   "app-name": "omdb data viewer",
+  "paginator": {
+    "first-page": "first page",
+    "last-page": "last page",
+    "next-page": "next page",
+    "previous-page": "previous page",
+    "range": "of"
+  },
   "home-page": {
     "search-form": {
       "title": "search",

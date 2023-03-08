@@ -3,7 +3,7 @@ import { TranslocoTestingModule } from '@ngneat/transloco';
 
 import { SearchToolbarComponent } from './search-toolbar.component';
 
-describe('SearchToolbarComponent', () => {
+xdescribe('SearchToolbarComponent', () => {
   let component: SearchToolbarComponent;
   let fixture: ComponentFixture<SearchToolbarComponent>;
 

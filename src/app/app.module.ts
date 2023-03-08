@@ -21,8 +21,12 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { CardComponent } from './components/card/card.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import {
+  MatPaginatorIntl,
+  MatPaginatorModule,
+} from '@angular/material/paginator';
 import { StringToNumberPipe } from './pipes/string-to-number.pipe';
+import { MatPaginatorIntlCroService } from './services/mat-paginator-intl-cro.service';
 
 @NgModule({
   declarations: [
@@ -58,6 +62,7 @@ import { StringToNumberPipe } from './pipes/string-to-number.pipe';
       }),
     },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlCroService },
   ],
   bootstrap: [AppComponent],
 })
