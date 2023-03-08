@@ -1,22 +1,60 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TranslocoRootModule } from './transloco-root.module';
+import { TranslocoHttpLoader } from './services/transloco-http-loader.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  TRANSLOCO_CONFIG,
+  TRANSLOCO_LOADER,
+  translocoConfig,
+  TranslocoModule,
+} from '@ngneat/transloco';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { SearchToolbarComponent } from './components/search-toolbar/search-toolbar.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    SearchToolbarComponent,
+    CapitalizePipe,
+    CardComponent,
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TranslocoRootModule,
     BrowserAnimationsModule,
+    TranslocoModule,
+    MatCardModule,
+    MatInputModule,
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: TRANSLOCO_CONFIG,
+      useValue: translocoConfig({
+        availableLangs: ['en', 'pl'],
+        defaultLang: 'en',
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+      }),
+    },
+    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

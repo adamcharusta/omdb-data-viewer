@@ -1,1 +1,22 @@
-{}
+{
+  "app-name": "omdb data viewer",
+  "home-page": {
+    "search-form": {
+      "title": "search",
+      "fields": {
+        "search": "search",
+        "year": "year",
+        "type": {
+          "title": "type",
+          "options": {
+            "none": "none",
+            "movie": "movie",
+            "series": "series",
+            "episode": "episode",
+            "game": "game"
+          }
+        }
+      }
+    }
+  }
+}

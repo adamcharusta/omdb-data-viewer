@@ -1,0 +1,11 @@
+<main class="w-100 h-100" *transloco="let t">
+  <app-search-toolbar (search)="handleSearch($event)"></app-search-toolbar>
+</main>
+
+<div *ngIf="omdbData$ | async as omdbData">
+  <p
+    *ngFor="let movie of omdbData?.Search"
+    (click)="getMovieData(movie.imdbID)">
+    {{ movie.Title }}
+  </p>
+</div>
