@@ -27,6 +27,8 @@ import {
 } from '@angular/material/paginator';
 import { StringToNumberPipe } from './pipes/string-to-number.pipe';
 import { MatPaginatorIntlCroService } from './services/mat-paginator-intl-cro.service';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { ImageNonPosterDirective } from './directives/image-non-poster.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { MatPaginatorIntlCroService } from './services/mat-paginator-intl-cro.se
     CapitalizePipe,
     CardComponent,
     StringToNumberPipe,
+    MovieCardComponent,
+    ImageNonPosterDirective,
   ],
 
   imports: [

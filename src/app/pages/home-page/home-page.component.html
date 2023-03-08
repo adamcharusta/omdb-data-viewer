@@ -4,11 +4,15 @@
   <div class="container">
     <app-card class="mt-2">
       <div *ngIf="omdbData$ | async as omdbData" content>
-        <p
-          *ngFor="let movie of omdbData?.Search"
-          (click)="getMovieData(movie.imdbID)">
-          {{ movie.Title }}
-        </p>
+        <div class="row">
+          <div
+            class="col-md-12 col-lg-4"
+            *ngFor="let movie of omdbData?.Search">
+            <app-movie-card
+              [movie]="movie"
+              (clickCard)="getMovieData(movie.imdbID)"></app-movie-card>
+          </div>
+        </div>
 
         <mat-paginator
           footer

@@ -21,8 +21,6 @@ describe('MatPaginatorIntlCroService', () => {
   });
 
   it('should set labels in constructor', () => {
-    console.log(service.firstPageLabel);
-
     expect(service.firstPageLabel).toBe(expectedText);
     expect(service.lastPageLabel).toBe(expectedText);
     expect(service.nextPageLabel).toBe(expectedText);

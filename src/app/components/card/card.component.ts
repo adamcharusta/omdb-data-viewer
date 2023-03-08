@@ -17,6 +17,7 @@ import { Component, Input } from '@angular/core';
       <mat-card-footer class="displayNoneWhenEmpty">
         <ng-content select="[footer]"></ng-content>
       </mat-card-footer>
+      <ng-content></ng-content>
     </mat-card>
   `,
   styles: [

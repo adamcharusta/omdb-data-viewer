@@ -5,7 +5,7 @@ import {
   OmdbSearchResponseType,
   SearchParametersType,
 } from '../app.types';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -21,16 +21,18 @@ export class OmdbApiService {
       .set('type', payload.type)
       .set('page', payload.page + 1);
 
-    return this.httpClient
-      .get(environment.API_URL, { params })
-      .pipe(tap(console.log));
+    return this.httpClient.get<OmdbSearchResponseType>(environment.API_URL, {
+      params,
+    });
+    // .pipe(tap(console.log));
   }
 
   getMovieByImdbID(imdbID: string): Observable<OmdbMovieDetailsType> {
     const params = new HttpParams().set('i', imdbID).set('plot', 'full');
 
-    return this.httpClient
-      .get(environment.API_URL, { params })
-      .pipe(tap(console.log));
+    return this.httpClient.get<OmdbMovieDetailsType>(environment.API_URL, {
+      params,
+    });
+    // .pipe(tap(console.log));
   }
 }
