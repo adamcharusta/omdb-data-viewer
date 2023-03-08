@@ -10,7 +10,7 @@
             *ngFor="let movie of omdbData?.Search">
             <app-movie-card
               [movie]="movie"
-              (clickCard)="getMovieData(movie.imdbID)"></app-movie-card>
+              (clickCard)="goToMovieDetails(movie.imdbID)"></app-movie-card>
           </div>
         </div>
 

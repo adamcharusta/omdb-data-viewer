@@ -1,0 +1,86 @@
+<main class="w-100 h-100" *transloco="let t">
+  <app-card
+    *ngIf="movie$ | async as movie"
+    [title]="movie.Title + ' (' + movie.Year + ')'"
+    [subtitle]="movie.Type | capitalize">
+    <div content>
+      <div class="row">
+        <div class="col-lg-3 col-md-12">
+          <img
+            mat-card-image
+            appImageNonPoster
+            [placeholder]="movie.Type | capitalize"
+            [src]="movie.Poster"
+            [alt]="t('img-alt', { title: movie.Title })"
+            class="h-100 w-100" />
+        </div>
+        <div class="col-lg-9 col-md-12 row">
+          <div class="col-lg-6 col-md-12">
+            <app-info-label
+              [label]="t('details-page.director')"
+              [value]="movie.Director"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.writer')"
+              [value]="movie.Writer"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.rated')"
+              [value]="movie.Rated"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.actors')"
+              [value]="movie.Actors"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.awards')"
+              [value]="movie.Awards"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.released')"
+              [value]="movie.Released"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.runtime')"
+              [value]="movie.Runtime"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.country')"
+              [value]="movie.Country"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.language')"
+              [value]="movie.Language"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.awards')"
+              [value]="movie.Awards"></app-info-label>
+            <app-info-label label="DVD" [value]="movie.DVD"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.production')"
+              [value]="movie.Production"></app-info-label>
+            <app-info-label label="Plot" [value]="movie.Plot"></app-info-label>
+            <a [routerLink]="HOME_ROUTE">{{
+              t('details-page.back-to-home') | capitalize
+            }}</a>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <app-info-label
+              [label]="t('details-page.genre')"
+              [value]="movie.Genre"></app-info-label>
+            <app-info-label
+              *ngFor="let rating of movie.Ratings"
+              [label]="rating.Source"
+              [value]="rating.Source"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.metascore')"
+              [value]="movie.Metascore"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.imdbRating')"
+              [value]="movie.imdbRating"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.imdbVotes')"
+              [value]="movie.imdbVotes"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.box-office')"
+              [value]="movie.BoxOffice"></app-info-label>
+            <app-info-label
+              [label]="t('details-page.box-website')"
+              [value]="movie.Website"></app-info-label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-card>
+</main>

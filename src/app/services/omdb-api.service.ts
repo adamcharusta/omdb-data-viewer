@@ -24,7 +24,6 @@ export class OmdbApiService {
     return this.httpClient.get<OmdbSearchResponseType>(environment.API_URL, {
       params,
     });
-    // .pipe(tap(console.log));
   }
 
   getMovieByImdbID(imdbID: string): Observable<OmdbMovieDetailsType> {
@@ -33,6 +32,5 @@ export class OmdbApiService {
     return this.httpClient.get<OmdbMovieDetailsType>(environment.API_URL, {
       params,
     });
-    // .pipe(tap(console.log));
   }
 }

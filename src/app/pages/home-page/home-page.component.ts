@@ -5,6 +5,8 @@ import { environment } from '../../../environments/environment';
 import { FormControl, FormGroup } from '@angular/forms';
 import { startWith, switchMap } from 'rxjs';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
+import { APP_ROUTES } from '../../app.routes';
 
 @Component({
   selector: 'app-home-page',
@@ -28,13 +30,13 @@ export class HomePageComponent {
     )
   );
 
-  constructor(private omdbApiService: OmdbApiService) {}
-
-  getMovieData(imdbID: string) {
-    this.omdbApiService.getMovieByImdbID(imdbID).subscribe();
-  }
+  constructor(private omdbApiService: OmdbApiService, private router: Router) {}
 
   handleChangePage($event: PageEvent) {
     this.searchForm.controls.page.setValue($event.pageIndex);
+  }
+
+  goToMovieDetails(imdbID: string) {
+    this.router.navigate([APP_ROUTES.DETAILS_PAGE, imdbID]);
   }
 }

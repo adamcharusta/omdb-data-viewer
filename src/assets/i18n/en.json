@@ -1,5 +1,6 @@
 {
   "app-name": "omdb data viewer",
+  "image-alt": "photo of {title}",
   "paginator": {
     "first-page": "first page",
     "last-page": "last page",
@@ -25,5 +26,29 @@
         }
       }
     }
+  },
+  "details-page": {
+    "rated": "rated",
+    "released": "released",
+    "runtime": "runtime",
+    "genre": "genre",
+    "director": "director",
+    "writer": "writer",
+    "actors": "actors",
+    "plot": "plot",
+    "language": "language",
+    "country": "country",
+    "awards": "awards",
+    "poster": "poster",
+    "metascore": "metascore",
+    "imdbrating": "imdbrating",
+    "imdbvotes": "imdbvotes",
+    "imdbid": "imdbid",
+    "dvd": "dvd",
+    "box-office": "boxoffice",
+    "production": "production",
+    "website": "website",
+    "response": "response",
+    "back-to-home": "back to home"
   }
 }

@@ -6,6 +6,7 @@ import { CapitalizePipe } from '../../pipes/capitalize.pipe';
   selector: 'app-movie-card',
   template: `
     <app-card
+      *transloco="let t"
       [subtitle]="getSubtitle()"
       class="pointer"
       (click)="clickCard.emit()">
@@ -14,7 +15,7 @@ import { CapitalizePipe } from '../../pipes/capitalize.pipe';
         appImageNonPoster
         [placeholder]="movieType"
         [src]="movie.Poster"
-        [alt]="'Photo of ' + movie.Title" />
+        [alt]="t('img-alt', { title: movie.Title })" />
     </app-card>
   `,
   styles: ['.pointer {cursor: pointer !important;}'],

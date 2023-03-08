@@ -29,6 +29,8 @@ import { StringToNumberPipe } from './pipes/string-to-number.pipe';
 import { MatPaginatorIntlCroService } from './services/mat-paginator-intl-cro.service';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { ImageNonPosterDirective } from './directives/image-non-poster.directive';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import { InfoLabelComponent } from './components/info-label/info-label.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +42,9 @@ import { ImageNonPosterDirective } from './directives/image-non-poster.directive
     StringToNumberPipe,
     MovieCardComponent,
     ImageNonPosterDirective,
+    DetailsPageComponent,
+    InfoLabelComponent,
   ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,
