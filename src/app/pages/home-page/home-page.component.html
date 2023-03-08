@@ -1,5 +1,5 @@
 <main class="w-100 h-100" *transloco="let t">
-  <app-search-toolbar (search)="handleSearch($event)"></app-search-toolbar>
+  <app-search-toolbar [searchForm]="searchForm"></app-search-toolbar>
 </main>
 
 <div *ngIf="omdbData$ | async as omdbData">
@@ -8,4 +8,15 @@
     (click)="getMovieData(movie.imdbID)">
     {{ movie.Title }}
   </p>
+
+  <mat-paginator
+    (page)="handleChangePage($event)"
+    class="demo-paginator"
+    *ngIf="omdbData.totalResults"
+    [length]="omdbData.totalResults | stringToNumber"
+    [showFirstLastButtons]="true"
+    [hidePageSize]="true"
+    [pageIndex]="searchForm.controls.page.value"
+    aria-label="Select page">
+  </mat-paginator>
 </div>

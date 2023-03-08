@@ -21,6 +21,8 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { CardComponent } from './components/card/card.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { StringToNumberPipe } from './pipes/string-to-number.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { CardComponent } from './components/card/card.component';
     SearchToolbarComponent,
     CapitalizePipe,
     CardComponent,
+    StringToNumberPipe,
   ],
 
   imports: [
@@ -42,6 +45,7 @@ import { CardComponent } from './components/card/card.component';
     MatToolbarModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

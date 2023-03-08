@@ -4,12 +4,15 @@ export type SearchParametersType = {
   searchedText: string;
   type: string;
   year: number | null;
+  //It must be one less, for example 1 page is 0.
+  page: number;
 };
 
 export type SearchFormType = {
   searchedText: FormControl<string>;
   type: FormControl<string>;
   year: FormControl<number | null>;
+  page: FormControl<number>;
 };
 
 export type OmdbMovieType = {
@@ -23,7 +26,7 @@ export type OmdbMovieType = {
 export type OmdbSearchResponseType = {
   Response: string;
   Search?: OmdbMovieType[];
-  TotalResults?: string;
+  totalResults?: string;
   Error?: string;
 };
 

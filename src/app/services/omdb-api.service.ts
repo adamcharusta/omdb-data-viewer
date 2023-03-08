@@ -18,7 +18,8 @@ export class OmdbApiService {
     const params = new HttpParams()
       .set('s', payload.searchedText)
       .set('y', payload.year ? payload.year : '')
-      .set('type', payload.type);
+      .set('type', payload.type)
+      .set('page', payload.page + 1);
 
     return this.httpClient
       .get(environment.API_URL, { params })
