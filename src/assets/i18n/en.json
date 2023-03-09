@@ -49,6 +49,7 @@
     "production": "production",
     "website": "website",
     "response": "response",
-    "back-to-home": "back to home"
+    "back-to-home": "back to home",
+    "recently-viewed": "recently viewed"
   }
 }

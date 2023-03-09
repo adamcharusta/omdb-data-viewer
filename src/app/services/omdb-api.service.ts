@@ -2,17 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import {
   OmdbMovieDetailsType,
+  OmdbMovieType,
   OmdbSearchResponseType,
   SearchParametersType,
 } from '../app.types';
-import { Observable } from 'rxjs';
+import { map, Observable, tap, zip } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { RecentlyViewedService } from './recently-viewed.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OmdbApiService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private recentlyViewedService: RecentlyViewedService
+  ) {}
 
   getMovies(payload: SearchParametersType): Observable<OmdbSearchResponseType> {
     const params = new HttpParams()
@@ -32,5 +37,23 @@ export class OmdbApiService {
     return this.httpClient.get<OmdbMovieDetailsType>(environment.API_URL, {
       params,
     });
+  }
+
+  getRecentlyViewedMovies(): Observable<OmdbMovieType[]> {
+    const ids = this.recentlyViewedService.getRecentlyViewed();
+    const movieQueryList = ids.map(id => this.getMovieByImdbID(id));
+
+    return zip(movieQueryList).pipe(
+      map(res =>
+        res.map(({ Title, Year, imdbID, Poster, Type }) => ({
+          Title,
+          Year,
+          imdbID,
+          Poster,
+          Type,
+        }))
+      ),
+      tap(console.log)
+    );
   }
 }

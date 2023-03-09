@@ -31,6 +31,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { ImageNonPosterDirective } from './directives/image-non-poster.directive';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { InfoLabelComponent } from './components/info-label/info-label.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { InfoLabelComponent } from './components/info-label/info-label.component
     ReactiveFormsModule,
     MatSelectModule,
     MatPaginatorModule,
+    MatSidenavModule,
   ],
   providers: [
     {

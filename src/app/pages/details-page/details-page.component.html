@@ -76,10 +76,24 @@
               [label]="t('details-page.box-office')"
               [value]="movie.BoxOffice"></app-info-label>
             <app-info-label
-              [label]="t('details-page.box-website')"
+              [label]="t('details-page.website')"
               [value]="movie.Website"></app-info-label>
           </div>
         </div>
+      </div>
+    </div>
+  </app-card>
+
+  <app-card
+    [title]="t('details-page.recently-viewed') | capitalize"
+    *ngIf="recentlyViewedMovies$ | async as recentlyViewedMovies">
+    <div class="row justify-content-center" content>
+      <div
+        class="col-lg-2 col-md-12"
+        *ngFor="let recently of recentlyViewedMovies">
+        <app-movie-card
+          [movie]="recently"
+          (click)="goToRecentlyViewMovie(recently.imdbID)"></app-movie-card>
       </div>
     </div>
   </app-card>
