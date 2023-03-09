@@ -42,6 +42,6 @@ export class SearchToolbarComponent {
   constructor(private translocoService: TranslocoService) {}
 
   onChange() {
-    this.search.emit(this.searchForm.getRawValue());
+    this.searchForm.controls.page.setValue(0);
   }
 }

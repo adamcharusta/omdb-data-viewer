@@ -1,1 +1,56 @@
-{}
+{
+  "app-name": "Przeglądarka danych OMDB",
+  "img-alt": "zdjęcie {title}",
+  "language": "język",
+  "paginator": {
+    "first-page": "pierwsza strona",
+    "last-page": "ostatnia strona",
+    "next-page": "następna strona",
+    "previous-page": "poprzednia strona",
+    "range": "z"
+  },
+  "home-page": {
+    "search-form": {
+      "title": "szukaj",
+      "fields": {
+        "search": "szukaj",
+        "year": "rok",
+        "type": {
+          "title": "typ",
+          "options": {
+            "none": "brak",
+            "movie": "film",
+            "series": "serial",
+            "episode": "odcinek",
+            "game": "gra"
+          }
+        }
+      }
+    }
+  },
+  "details-page": {
+    "rated": "ocena",
+    "released": "premiera",
+    "runtime": "czas trwania",
+    "genre": "gatunek",
+    "director": "reżyser",
+    "writer": "scenarzysta",
+    "actors": "aktorzy",
+    "plot": "fabuła",
+    "language": "język",
+    "country": "kraj",
+    "awards": "nagrody",
+    "poster": "plakat",
+    "metascore": "metascore",
+    "imdbrating": "ocena IMDB",
+    "imdbvotes": "głosy IMDB",
+    "imdbid": "ID IMDB",
+    "dvd": "DVD",
+    "box-office": "boxoffice",
+    "production": "produkcja",
+    "website": "strona internetowa",
+    "response": "odpowiedź",
+    "back-to-home": "powrót do strony głównej",
+    "recently-viewed": "ostatnio przeglądane"
+  }
+}

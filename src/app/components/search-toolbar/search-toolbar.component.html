@@ -1,7 +1,7 @@
 <div class="container" *transloco="let t">
   <app-card [title]="t('app-name') | titlecase">
-    <form content [formGroup]="searchForm" (input)="onChange()" class="mt-2">
-      <div class="row">
+    <div class="row" content>
+      <form [formGroup]="searchForm" (input)="onChange()" class="row col-10">
         <div class="col-md-12 col-lg-8">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>
@@ -39,7 +39,11 @@
             </mat-select>
           </mat-form-field>
         </div>
+      </form>
+
+      <div class="col-2">
+        <app-lang-select></app-lang-select>
       </div>
-    </form>
+    </div>
   </app-card>
 </div>

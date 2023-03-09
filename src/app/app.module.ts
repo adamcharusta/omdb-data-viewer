@@ -18,7 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SearchToolbarComponent } from './components/search-toolbar/search-toolbar.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { CardComponent } from './components/card/card.component';
 import {
@@ -32,6 +32,7 @@ import { ImageNonPosterDirective } from './directives/image-non-poster.directive
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { InfoLabelComponent } from './components/info-label/info-label.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { LangSelectComponent } from './components/lang-select/lang-select.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     ImageNonPosterDirective,
     DetailsPageComponent,
     InfoLabelComponent,
+    LangSelectComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSelectModule,
     MatPaginatorModule,
     MatSidenavModule,
+    FormsModule,
   ],
   providers: [
     {
