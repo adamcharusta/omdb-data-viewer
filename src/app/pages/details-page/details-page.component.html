@@ -86,7 +86,7 @@
 
   <app-card
     [title]="t('details-page.recently-viewed') | capitalize"
-    *ngIf="recentlyViewedMovies$ | async as recentlyViewedMovies; else loading">
+    *ngIf="recentlyViewedMovies$ | async as recentlyViewedMovies">
     <div class="row justify-content-center" content>
       <div
         class="col-lg-2 col-md-12"
