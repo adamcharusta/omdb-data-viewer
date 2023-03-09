@@ -10,6 +10,8 @@ import {
   SearchParametersType,
 } from '../app.types';
 import { environment } from '../../environments/environment';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { TranslocoService, TranslocoTestingModule } from '@ngneat/transloco';
 
 describe('OmdbApiService', () => {
   let injector: TestBed;
@@ -18,8 +20,12 @@ describe('OmdbApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [OmdbApiService],
+      imports: [
+        HttpClientTestingModule,
+        MatSnackBarModule,
+        TranslocoTestingModule,
+      ],
+      providers: [OmdbApiService, TranslocoService, MatSnackBar],
     });
     injector = getTestBed();
     service = injector.inject(OmdbApiService);

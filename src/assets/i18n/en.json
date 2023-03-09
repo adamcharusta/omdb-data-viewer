@@ -2,6 +2,7 @@
   "app-name": "omdb data viewer",
   "img-alt": "photo of {title}",
   "language": "language",
+  "snackbar-close": "close",
   "paginator": {
     "first-page": "first page",
     "last-page": "last page",

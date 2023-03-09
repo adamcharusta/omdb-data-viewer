@@ -33,6 +33,8 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 import { InfoLabelComponent } from './components/info-label/info-label.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LangSelectComponent } from './components/lang-select/lang-select.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { LangSelectComponent } from './components/lang-select/lang-select.compon
     MatPaginatorModule,
     MatSidenavModule,
     FormsModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

@@ -8,6 +8,9 @@ import { OmdbMovieDetailsType } from '../../app.types';
 import { APP_ROUTES } from '../../app.routes';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { TranslocoService, TranslocoTestingModule } from '@ngneat/transloco';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 describe('DetailsPageComponent', () => {
   let component: DetailsPageComponent;
@@ -58,7 +61,13 @@ describe('DetailsPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [DetailsPageComponent],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule,
+        MatSnackBarModule,
+        TranslocoTestingModule,
+        MatProgressSpinnerModule,
+      ],
       providers: [
         {
           provide: ActivatedRoute,
@@ -66,6 +75,8 @@ describe('DetailsPageComponent', () => {
         },
         OmdbApiService,
         RecentlyViewedService,
+        MatSnackBar,
+        TranslocoService,
       ],
     }).compileComponents();
 

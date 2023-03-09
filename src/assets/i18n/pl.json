@@ -2,6 +2,7 @@
   "app-name": "Przeglądarka danych OMDB",
   "img-alt": "zdjęcie {title}",
   "language": "język",
+  "snackbar-close": "zamknij",
   "paginator": {
     "first-page": "pierwsza strona",
     "last-page": "ostatnia strona",
