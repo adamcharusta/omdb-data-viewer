@@ -1,6 +1,6 @@
 {
   "app-name": "omdb data viewer",
-  "img-alt": "photo of {title}",
+  "img-alt": "photo of {{title}}",
   "language": "language",
   "snackbar-close": "close",
   "paginator": {
@@ -43,9 +43,9 @@
     "awards": "awards",
     "poster": "poster",
     "metascore": "metascore",
-    "imdbrating": "imdbrating",
-    "imdbvotes": "imdbvotes",
-    "imdbid": "imdbid",
+    "imdbRating": "imdbrating",
+    "imdbVotes": "imdbvotes",
+    "imdbId": "imdbid",
     "dvd": "dvd",
     "box-office": "boxoffice",
     "production": "production",

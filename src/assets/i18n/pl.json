@@ -1,6 +1,6 @@
 {
   "app-name": "Przeglądarka danych OMDB",
-  "img-alt": "zdjęcie {title}",
+  "img-alt": "zdjęcie {{title}}",
   "language": "język",
   "snackbar-close": "zamknij",
   "paginator": {
@@ -43,9 +43,9 @@
     "awards": "nagrody",
     "poster": "plakat",
     "metascore": "metascore",
-    "imdbrating": "ocena IMDB",
-    "imdbvotes": "głosy IMDB",
-    "imdbid": "ID IMDB",
+    "imdbRating": "ocena IMDB",
+    "imdbVotes": "głosy IMDB",
+    "imdbId": "ID IMDB",
     "dvd": "DVD",
     "box-office": "boxoffice",
     "production": "produkcja",
